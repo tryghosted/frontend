@@ -1,0 +1,39 @@
+.form {
+  display: flex;
+  border-radius: 8px;
+  max-width: 100%;
+}
+.button {
+  border-radius: 0px 8px 8px 0px;
+  background: var(--brand-purple);
+  padding: 14px 24px;
+  color: white;
+  text-align: center;
+  /* font-family: Roobert; */
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.button:hover {
+  background-color: var(--brand-purple-darken);
+}
+.button:disabled {
+  background-color: #666;
+}
+.input {
+  border: 1px solid var(--brand-purple);
+  border-radius: 8px 0px 0px 8px;
+  padding: 15px 24px;
+}
+@media screen and (max-width: 1024px) {
+  .form {
+    flex-direction: column;
+  }
+  .button {
+    border-radius: 0px 0px 8px 8px;
+  }
+  .input {
+    border-radius: 8px 8px 0px 0px;
+  }
+}

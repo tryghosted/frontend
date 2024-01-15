@@ -1,0 +1,32 @@
+.gridContainer {
+  display: grid;
+  grid-template-columns: 1fr 4fr 1fr;
+  grid-template-rows: 1fr 1fr;
+}
+.container {
+  display: flex;
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 12px 0px;
+  justify-content: space-between;
+  align-items: center;
+  flex: 1 0 0;
+}
+.link {
+  padding: 12px 24px;
+  text-align: center;
+  border-bottom: 4px solid transparent;
+}
+.link:hover {
+  border-bottom-color: var(--brand-purple);
+}
+.accessLink {
+  padding: 14px;
+  text-align: center;
+  border-radius: 8px;
+  background: var(--brand-purple);
+  color: white;
+}
+.accessLink:hover {
+  background: var(--brand-purple-darken);
+}

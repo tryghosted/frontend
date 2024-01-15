@@ -1,0 +1,74 @@
+.heading {
+  color: #000050;
+  /* font-family: Roobert; */
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.h2 {
+  color: #000050;
+  text-align: center;
+  /* font-family: Roobert; */
+  /* font-size: 40px; */
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.h3 {
+  color: #787878;
+  /* font-family: Roobert-Regular; */
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 5.12px;
+  text-transform: uppercase;
+}
+.howTitle {
+  color: var(--Blue-tittle, #000050);
+  text-align: center;
+  /* font-family: Roobert; */
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  margin-bottom: 16px;
+}
+.accessTitle {
+  color: #000050;
+  /* font-family: Matter; */
+  /* font-size: 40px; */
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  /* margin-bottom: 32px; */
+}
+@media screen and (min-width: 1024px) {
+  .h3 {
+    font-size: 16px;
+  }
+}
+
+.underline {
+  border-bottom: 4px solid var(--brand-purple);
+}
+.headingSub {
+  color: #000050;
+  /* font-family: Roobert-Regular; */
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-bottom: 32px;
+}
+.operators {
+  color: #787878;
+  /* font-family: Roobert-Regular; */
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 5.12px;
+  text-transform: uppercase;
+  margin: 32px 0 24px 0;
+}

@@ -1,113 +1,130 @@
-import Image from 'next/image'
+import styles from './styles.module.css'
+import EmailSignup from './components/email-signup'
+import Testimonial from './components/testimonial'
+// Images
+import { builtBy, appLogos, how, coachingLogos } from './content/home'
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">src/app/page.tsx</code>
+    <main className='bg-grid bg-no-repeat'>
+      <HeroSection />
+      <HowItWorksSection />
+      <GetAccessSection />
+      <TestimonialSection />
+    </main>
+  )
+}
+
+function HeroSection() {
+  return (
+    <section className='grid md:grid-cols-12 gap-8 py-7 lg:py-14'>
+      <div className='md:col-span-7'>
+        <h1 className={`text-3xl md:text-5xl lg:pr-2 mb-3 ${styles.heading}`}><span className={styles.underline}>Completing</span> the<br /> Interview Feedback Loop</h1>
+        <p className={styles.headingSub}>
+          Ghosted AI is your interview feedback assistant, we join your remote interviews, transcribe call audio, and then leverage the power of AI to provide you instant feedback on your interview performance.
         </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+        <EmailSignup />
+        <h2 className={`text-md mt-8 mb-6 ${styles.h3}`}>Built by operators from</h2>
+        <ul className='grid grid-cols-2 md:grid-cols-4 gap-4 mr-14'>
+          {builtBy.map(logo => (
+            <li key={logo.title} style={{ position: 'relative', height: '20px' }}>
+              <PlaceholderImg height={20} width={100} />
+            </li>
+          ))}
+        </ul>
+      </div>
+      <div className='md:col-span-5'>
+        <div style={{ position: 'relative', height: '400px' }}>
+          <PlaceholderImg height={400} width={272} />
         </div>
       </div>
+    </section>
+  )
+}
 
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px] z-[-1]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
+function HowItWorksSection() {
+  return (
+    <section id="how-it-works" className='py-7 lg:py-14'>
+      <h2 className={`mb-8 text-xl md:text-4xl text-center ${styles.heading}`}>How it works</h2>
+      <div className='grid md:grid-cols-3 gap-8'>
+        {how.map(h => (
+          <div key={h.title} className="text-center flex flex-col content-center items-center">
+            <PlaceholderImg height={160} width={160} />
+            <p className={`mt-8 mb-4 md:text-xl ${styles.heading}`}>{h.title}</p>
+            <p>{h.subtitle}</p>
+          </div>
+        ))}
+      </div>
+      <div className='text-center py-12'>
+        <a href="#get-access" className="primary-button">Get Access!</a>
+      </div>
+    </section>
+  )
+}
+
+function GetAccessSection() {
+  return (
+    <section id="get-access" className='py-7 lg:py-14'>
+      <div className='grid md:grid-cols-2'>
+        <PlaceholderImg height={455} width={400} className="hidden lg:block" />
+        <PlaceholderImg height={255} width={200} className="block lg:hidden mx-auto" />
+        <div className='flex flex-col h-full justify-center mt-8'>
+          <h2 className={`text-lg md:text-2xl mb-8 ${styles.accessTitle}`}>Provide your details for early access to our private beta!</h2>
+          <EmailSignup />
+        </div>
+      </div>
+      <div className="pt-14 text-center">
+        <h3 className={styles.h3}>Works with popular meeting apps</h3>
+        <ul className='flex flex-wrap gap-3 justify-around max-w-3xl mx-auto py-8'>
+          {appLogos.map(logo => (
+            <li key={logo.title}>
+              <PlaceholderImg width={171} height={32} />
+            </li>
+          ))}
+        </ul>
+        <p>and more</p>
+      </div>
+    </section>
+  )
+}
+
+function TestimonialSection() {
+  return (
+    <section id="testimonials" className='py-7 lg:py-14'>
+      <h2 className={`mb-8 text-xl md:text-4xl text-center ${styles.heading}`}>Testimonials</h2>
+      <div className='grid md:grid-cols-3 gap-4'>
+        <Testimonial
+          rating={5}
+          name="Amanda Chen"
+          testimony="Incredible app for job interviews! Ghosted AI's feedback was spot on, helping me improve my answers and body language. A must-have for job seekers!"
+        />
+        <Testimonial
+          rating={5}
+          name="David Martinez"
+          testimony="Ghosted AI surprised me with its precise, helpful AI coaching. Great for interview prep, though it could use more industry-specific tips. Very user-friendly!"
+        />
+        <Testimonial
+          rating={5}
+          name="Sarah Johnson"
+          testimony="Ghosted AI offers good basic interview feedback, but it's a bit generic. Great for beginners, but might not suffice for experienced professionals."
         />
       </div>
-
-      <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore starter templates for Next.js.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
+      <div className="pt-14 text-center">
+        <h2 className={styles.h3}>Coaching from professionals at</h2>
+        <ul className='flex flex-wrap gap-3 justify-around py-8'>
+          {coachingLogos.map(logo => (
+            <li key={logo.title}>
+              <PlaceholderImg width={100} height={30} />
+            </li>
+          ))}
+        </ul>
       </div>
-    </main>
+    </section>
+  )
+}
+
+function PlaceholderImg({ width, height, ...rest }: { width: number, height: number, className?: string }) {
+  return (
+    <div style={{ height: `${height}px`, width: `${width}px`, background: '#ddd' }} {...rest}></div>
   )
 }
