@@ -76,7 +76,7 @@ export default function Testimonial({ name, testimony, rating }: { name: string,
                 width: '200px',
                 height: '32px',
                 background: '#ddd',
-            }} />
+            }}>Logo here</div>
 
         </div>
     );

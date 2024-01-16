@@ -4,7 +4,7 @@ import Testimonial from './components/testimonial'
 // Images
 import { builtBy, worksWith, how, coachingLogos } from './content/home'
 import Image from 'next/image'
-import heroInbox from '/public/illustrations/hero-inbox.png'
+import heroInbox from '/public/illustrations/hero-inbox.svg'
 import recording from '/public/illustrations/recording.svg'
 
 export default function Home() {
@@ -52,12 +52,10 @@ function HeroSection() {
       <div className='md:col-span-5'>
         <div style={{ position: 'relative', height: '400px' }}>
           <Image
-            alt="Mountains"
-            // Importing an image will
-            // automatically set the width and height
             src={heroInbox}
+            // empty labels this image as decorative
+            alt=""
             sizes="800px"
-            // Make the image display full width
             style={{
               width: '100%',
               height: 'auto',
@@ -103,7 +101,7 @@ function GetAccessSection() {
       <div className='grid md:grid-cols-2'>
         <div style={{ position: 'relative', width: '400px', margin: '0 auto' }}>
           <Image
-            alt="Recording screen"
+            alt=""
             src={recording}
             sizes="800px"
             // Make the image display full width
@@ -178,6 +176,6 @@ function TestimonialSection() {
 
 function PlaceholderImg({ width, height, ...rest }: { width: number, height: number, className?: string }) {
   return (
-    <div style={{ height: `${height}px`, width: `${width}px`, background: '#ddd' }} {...rest}></div>
+    <div style={{ height: `${height}px`, width: `${width}px`, background: '#ddd' }} {...rest}>Logo here</div>
   )
 }

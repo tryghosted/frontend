@@ -1,12 +1,12 @@
 .heading {
-  color: #000050;
+  color: var(--brand-purple-darkest);
   /* font-family: Roobert; */
   font-style: normal;
   font-weight: 700;
   line-height: normal;
 }
 .h2 {
-  color: #000050;
+  color: var(--brand-purple-darkest);
   text-align: center;
   /* font-family: Roobert; */
   /* font-size: 40px; */
@@ -25,7 +25,7 @@
   text-transform: uppercase;
 }
 .howTitle {
-  color: var(--Blue-tittle, #000050);
+  color: var(--brand-purple-darkest);
   text-align: center;
   /* font-family: Roobert; */
   font-size: 20px;
@@ -35,7 +35,7 @@
   margin-bottom: 16px;
 }
 .accessTitle {
-  color: #000050;
+  color: var(--brand-purple-darkest);
   /* font-family: Matter; */
   /* font-size: 40px; */
   font-style: normal;
@@ -53,7 +53,7 @@
   border-bottom: 4px solid var(--brand-purple);
 }
 .headingSub {
-  color: #000050;
+  color: var(--brand-purple-darkest);
   /* font-family: Roobert-Regular; */
   font-size: 16px;
   font-style: normal;

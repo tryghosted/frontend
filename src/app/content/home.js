@@ -1,9 +1,9 @@
 import googleMeet from "/public/logos/google-meet.svg";
 import zoom from "/public/logos/zoom.svg";
 import msTeams from "/public/logos/microsoft-teams.svg";
-import extensionIllo from "/public/illustrations/extension.png";
-import feedbackIllo from "/public/illustrations/feedback.png";
-import coachingIllo from "/public/illustrations/coaching.png";
+import extensionIllo from "/public/illustrations/extension.svg";
+import feedbackIllo from "/public/illustrations/feedback.svg";
+import coachingIllo from "/public/illustrations/coaching.svg";
 
 export const builtBy = [
   { title: "Amazon", src: null, height: "24px" },
@@ -29,7 +29,7 @@ export const how = [
     subtitle:
       "Ghosted effortlessly integrates with modern video platforms, listening and transcribing each word as you go",
     image: extensionIllo,
-    alt: "",
+    alt: "", // empty alt marks this image as decorative https://www.w3.org/WAI/tutorials/images/decorative/
   },
   {
     title: "Receive Feedback the Next Day",
