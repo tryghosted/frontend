@@ -6,8 +6,8 @@ import GhostedLogo from '/public/logos/ghosted.svg'
 import { useState } from 'react';
 
 const links = [
-    { title: 'How it works', href: '#how-it-works', scrollTo: true },
-    { title: 'Testimonials', href: '#testimonials', scrollTo: true },
+    { title: 'How it works', href: '/#how-it-works', scrollTo: '#how-it-works' },
+    { title: 'Testimonials', href: '/#testimonials', scrollTo: '#testimonials' },
     { title: 'About us', href: '/about' }
 ]
 
@@ -23,12 +23,14 @@ export default function Header() {
     return (
         <nav className="flex items-center justify-between flex-wrap py-3">
             <div className="flex items-center flex-shrink-0 text-white">
-                <Image
-                    src={GhostedLogo}
-                    alt="Ghosted"
-                    width={146}
-                    height={28}
-                />
+                <a href="/">
+                    <Image
+                        src={GhostedLogo}
+                        alt="Ghosted home"
+                        width={146}
+                        height={28}
+                    />
+                </a>
             </div>
             <div className="hidden lg:flex">
                 {links.map(link => (
@@ -36,7 +38,7 @@ export default function Header() {
                         key={link.href}
                         className={`block mt-4 lg:inline-block lg:mt-0 ${styles.link}`}
                         href={link.href}
-                        onClick={() => scrollToHash(link.scrollTo ? link.href : '')}>
+                        onClick={() => scrollToHash(link.scrollTo ?? '')}>
                         {link.title}
                     </a>
                 ))}
@@ -78,7 +80,7 @@ export default function Header() {
                             href={link.href}
                             onClick={() => {
                                 setIsOpen(false);
-                                scrollToHash(link.scrollTo ? link.href : '');
+                                scrollToHash(link.scrollTo ?? '');
                             }}>
                             {link.title}
                         </a>

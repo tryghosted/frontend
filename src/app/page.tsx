@@ -2,7 +2,10 @@ import styles from './styles.module.css'
 import EmailSignup from './components/email-signup'
 import Testimonial from './components/testimonial'
 // Images
-import { builtBy, appLogos, how, coachingLogos } from './content/home'
+import { builtBy, worksWith, how, coachingLogos } from './content/home'
+import Image from 'next/image'
+import heroInbox from '/public/illustrations/hero-inbox.png'
+import recording from '/public/illustrations/recording.svg'
 
 export default function Home() {
   return (
@@ -27,15 +30,39 @@ function HeroSection() {
         <h2 className={`text-md mt-8 mb-6 ${styles.h3}`}>Built by operators from</h2>
         <ul className='grid grid-cols-2 md:grid-cols-4 gap-4 mr-14'>
           {builtBy.map(logo => (
-            <li key={logo.title} style={{ position: 'relative', height: '20px' }}>
-              <PlaceholderImg height={20} width={100} />
+            <li key={logo.title} style={{ position: 'relative', height: '20px', width: '100px', 'background': '#eee' }}>
+              {logo.src ? (
+                <Image
+                  alt={logo.title}
+                  src={logo.src}
+                  sizes="100px"
+                  style={{
+                    width: 'auto',
+                    height: '20px',
+                  }}
+                />
+              ) : (
+                <PlaceholderImg height={20} width={100} />
+              )}
+
             </li>
           ))}
         </ul>
       </div>
       <div className='md:col-span-5'>
         <div style={{ position: 'relative', height: '400px' }}>
-          <PlaceholderImg height={400} width={272} />
+          <Image
+            alt="Mountains"
+            // Importing an image will
+            // automatically set the width and height
+            src={heroInbox}
+            sizes="800px"
+            // Make the image display full width
+            style={{
+              width: '100%',
+              height: 'auto',
+            }}
+          />
         </div>
       </div>
     </section>
@@ -49,7 +76,15 @@ function HowItWorksSection() {
       <div className='grid md:grid-cols-3 gap-8'>
         {how.map(h => (
           <div key={h.title} className="text-center flex flex-col content-center items-center">
-            <PlaceholderImg height={160} width={160} />
+            <Image
+              alt={h.alt}
+              src={h.image}
+              width={200}
+              height={200}
+              style={{
+                objectFit: 'contain'
+              }}
+            />
             <p className={`mt-8 mb-4 md:text-xl ${styles.heading}`}>{h.title}</p>
             <p>{h.subtitle}</p>
           </div>
@@ -66,8 +101,18 @@ function GetAccessSection() {
   return (
     <section id="get-access" className='py-7 lg:py-14'>
       <div className='grid md:grid-cols-2'>
-        <PlaceholderImg height={455} width={400} className="hidden lg:block" />
-        <PlaceholderImg height={255} width={200} className="block lg:hidden mx-auto" />
+        <div style={{ position: 'relative', width: '400px', margin: '0 auto' }}>
+          <Image
+            alt="Recording screen"
+            src={recording}
+            sizes="800px"
+            // Make the image display full width
+            style={{
+              width: '100%',
+              height: 'auto',
+            }}
+          />
+        </div>
         <div className='flex flex-col h-full justify-center mt-8'>
           <h2 className={`text-lg md:text-2xl mb-8 ${styles.accessTitle}`}>Provide your details for early access to our private beta!</h2>
           <EmailSignup />
@@ -76,9 +121,17 @@ function GetAccessSection() {
       <div className="pt-14 text-center">
         <h3 className={styles.h3}>Works with popular meeting apps</h3>
         <ul className='flex flex-wrap gap-3 justify-around max-w-3xl mx-auto py-8'>
-          {appLogos.map(logo => (
-            <li key={logo.title}>
-              <PlaceholderImg width={171} height={32} />
+          {worksWith.map(logo => (
+            <li key={logo.title} style={{ position: 'relative', width: '171px', height: '32px', background: '#eee' }}>
+              <Image
+                alt={logo.title}
+                src={logo.src}
+                sizes="180px"
+                style={{
+                  width: 'auto',
+                  height: '32px',
+                }}
+              />
             </li>
           ))}
         </ul>
