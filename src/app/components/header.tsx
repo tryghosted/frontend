@@ -1,31 +1,25 @@
 'use client'
 
-import Image from 'next/image';
+import Image from 'next/image'
+import Link from 'next/link'
 import styles from './header.module.css'
-import GhostedLogo from '/public/logos/ghosted.svg'
-import { useState } from 'react';
+import { useState } from 'react'
 
 const links = [
-    { title: 'How it works', href: '/#how-it-works', scrollTo: '#how-it-works' },
-    { title: 'Testimonials', href: '/#testimonials', scrollTo: '#testimonials' },
+    { title: 'How it works', href: '/#how-it-works' },
+    { title: 'Testimonials', href: '/#testimonials' },
     { title: 'About us', href: '/about' }
 ]
 
 export default function Header() {
     const [isOpen, setIsOpen] = useState(false);
-    const scrollToHash = function (element_id: string) {
-        if (element_id) {
-            const element = document.getElementById(element_id)
-            element?.scrollIntoView({ behavior: "smooth", block: "end", inline: "nearest" });
-        }
-    }
 
     return (
         <nav className="flex items-center justify-between flex-wrap py-3">
             <div className="flex items-center flex-shrink-0 text-white">
                 <a href="/">
                     <Image
-                        src={GhostedLogo}
+                        src="/logos/ghosted.svg"
                         alt="Ghosted home"
                         width={146}
                         height={28}
@@ -34,19 +28,13 @@ export default function Header() {
             </div>
             <div className="hidden lg:flex">
                 {links.map(link => (
-                    <a
-                        key={link.href}
-                        className={`block mt-4 lg:inline-block lg:mt-0 ${styles.link}`}
-                        href={link.href}
-                        onClick={() => scrollToHash(link.scrollTo ?? '')}>
-                        {link.title}
-                    </a>
+                    <Link href={link.href} className={`block mt-4 lg:inline-block lg:mt-0 ${styles.link}`}>{link.title}</Link>
                 ))}
             </div>
             <div>
-                <a className={`${styles.accessLink} hidden lg:block`} href="#get-access" onClick={() => scrollToHash('get-access')}>
+                <Link href="#get-access" className={`${styles.accessLink} hidden lg:block`}>
                     Get Early Access
-                </a>
+                </Link>
                 <button
                     onClick={() => setIsOpen(!isOpen)}
                     className="flex lg:hidden items-center px-3 py-2 rounded text-black-500 hover:text-black-400"
@@ -69,28 +57,18 @@ export default function Header() {
                     </svg>
                 </button>
             </div>
-            <div
-                className={`w-full block flex-grow lg:hidden ${isOpen ? "block" : "hidden"}`}
-            >
+            <div className={`w-full block flex-grow lg:hidden ${isOpen ? "block" : "hidden"}`}>
                 <div className="text-sm flex flex-col gap-6 text-center">
                     {links.map(link => (
-                        <a
-                            key={link.href}
-                            className={`block mt-4 lg:inline-block lg:mt-0`}
+                        <Link
                             href={link.href}
-                            onClick={() => {
-                                setIsOpen(false);
-                                scrollToHash(link.scrollTo ?? '');
-                            }}>
+                            className={`block mt-4 lg:inline-block lg:mt-0`}>
                             {link.title}
-                        </a>
+                        </Link>
                     ))}
-                    <a className={`${styles.accessLink} inline`} href="#get-access" onClick={() => {
-                        setIsOpen(false);
-                        scrollToHash('get-access')
-                    }}>
+                    <Link className={`${styles.accessLink} inline`} href="#get-access">
                         Get Early Access
-                    </a>
+                    </Link>
                 </div>
             </div>
         </nav >

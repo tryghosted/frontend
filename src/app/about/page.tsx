@@ -1,4 +1,3 @@
-
 export default function About() {
     return (
         <main className='bg-grid bg-no-repeat'>

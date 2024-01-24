@@ -6,10 +6,10 @@ import feedbackIllo from "/public/illustrations/feedback.svg";
 import coachingIllo from "/public/illustrations/coaching.svg";
 
 export const builtBy = [
-  { title: "Amazon", src: null, height: "24px" },
-  { title: "Visa", src: null, height: "24px" },
-  { title: "Google", src: null, height: "24px" },
-  { title: "Sprig (a16z & Accel backed)", src: null, height: "24px" },
+  { title: "Amazon", src: "/logos/amazon.svg", height: "24px" },
+  { title: "Visa", src: "logos/visa.svg", height: "24px" },
+  { title: "Google", src: "logos/google.svg", height: "24px" },
+  { title: "Sprig (a16z & Accel backed)", src: "logos/sprig.svg", height: "24px" },
 ];
 export const worksWith = [
   { title: "Google Meet", src: googleMeet, height: "32px" },
@@ -17,11 +17,11 @@ export const worksWith = [
   { title: "Microsoft Teams", src: msTeams, height: "32px" },
 ];
 export const coachingLogos = [
-  { title: "Google", src: null, height: "24px" },
-  { title: "Dropbox", src: null, height: "24px" },
-  { title: "Instacart", src: null, height: "24px" },
-  { title: "Uber", src: null, height: "24px" },
-  { title: "Meta", src: null, height: "24px" },
+  { title: "Google", src: "/logos/google.svg", height: "24px" },
+  { title: "Dropbox", src: "/logos/dropbox.svg", height: "24px" },
+  { title: "Instacart", src: "/logos/instacart.svg", height: "24px" },
+  { title: "Uber", src: "/logos/uber.svg", height: "24px" },
+  { title: "Meta", src: "/logos/meta.svg", height: "24px" },
 ];
 export const how = [
   {

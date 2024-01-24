@@ -1,4 +1,6 @@
+import { log } from 'console';
 import styles from './testimonial.module.css'
+import Image from 'next/image';
 import { useMemo } from 'react';
 
 interface Star {
@@ -37,7 +39,7 @@ function Stars({ rating, outOf = 5 }: { rating: number, outOf?: number }) {
     )
 }
 
-export default function Testimonial({ name, testimony, rating }: { name: string, testimony: string, rating: number }) {
+export default function Testimonial({ name, testimony, rating, logo }: { name: string, testimony: string, rating: number, logo: string }) {
     return (
         <div className={styles.box}>
             <div>
@@ -72,12 +74,13 @@ export default function Testimonial({ name, testimony, rating }: { name: string,
                     {testimony}
                 </p>
             </div>
-            <div style={{
-                width: '200px',
-                height: '32px',
-                background: '#ddd',
-            }}>Logo here</div>
-
+            <div style={{ position: "relative", width: "80px", height: "28px" }}>
+                <Image
+                    src={logo}
+                    alt=""
+                    fill
+                    style={{ objectFit: "contain" }} />
+            </div>
         </div>
     );
 }

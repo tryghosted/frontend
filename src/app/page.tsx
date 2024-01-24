@@ -28,26 +28,21 @@ function HeroSection() {
         </p>
         <EmailSignup />
         <h2 className={`text-md mt-8 mb-6 ${styles.h3}`}>Built by operators from</h2>
-        <ul className='grid grid-cols-2 md:grid-cols-4 gap-4 mr-14'>
-          {builtBy.map(logo => (
-            <li key={logo.title} style={{ position: 'relative', height: '20px', width: '100px', 'background': '#eee' }}>
-              {logo.src ? (
-                <Image
-                  alt={logo.title}
-                  src={logo.src}
-                  sizes="100px"
-                  style={{
-                    width: 'auto',
-                    height: '20px',
-                  }}
-                />
-              ) : (
-                <PlaceholderImg height={20} width={100} />
-              )}
-
-            </li>
-          ))}
-        </ul>
+        <div className="h-16 justify-start items-start inline-flex">
+          <div className="w-32 h-6 flex-col justify-center items-start inline-flex">
+            <Image alt="Amazon" src="/logos/amazon.svg" width={68} height={20} sizes="100vw" />
+          </div>
+          <div className="w-32 h-6 flex-col justify-center items-start inline-flex">
+            <Image alt="Visa" src="/logos/visa.svg" width={51} height={16} sizes="100vw" />
+          </div>
+          <div className="w-32 flex-col justify-center items-start inline-flex">
+            <Image alt="Google" src="/logos/google.svg" width={68} height={24} sizes="100vw" />
+          </div>
+          <div className="flex-col justify-start items-start gap-1 inline-flex">
+            <Image alt="Sprig" src="/logos/sprig.svg" width={59} height={22} sizes="100vw" />
+            <div className="text-neutral-500 text-sm font-normal">a16Z & Accel backed</div>
+          </div>
+        </div>
       </div>
       <div className='md:col-span-5'>
         <div style={{ position: 'relative', height: '400px' }}>
@@ -74,15 +69,13 @@ function HowItWorksSection() {
       <div className='grid md:grid-cols-3 gap-8'>
         {how.map(h => (
           <div key={h.title} className="text-center flex flex-col content-center items-center">
-            <Image
-              alt={h.alt}
-              src={h.image}
-              width={200}
-              height={200}
-              style={{
-                objectFit: 'contain'
-              }}
-            />
+            <div style={{ position: "relative", width: "200px", height: "200px" }}>
+              <Image
+                  alt={h.alt}
+                  src={h.image}
+                  fill
+                  style={{ objectFit: "contain" }} />
+            </div>
             <p className={`mt-8 mb-4 md:text-xl ${styles.heading}`}>{h.title}</p>
             <p>{h.subtitle}</p>
           </div>
@@ -120,7 +113,7 @@ function GetAccessSection() {
         <h3 className={styles.h3}>Works with popular meeting apps</h3>
         <ul className='flex flex-wrap gap-3 justify-around max-w-3xl mx-auto py-8'>
           {worksWith.map(logo => (
-            <li key={logo.title} style={{ position: 'relative', width: '171px', height: '32px', background: '#eee' }}>
+            <li key={logo.title} style={{ position: 'relative', width: '171px', height: '32px' }}>
               <Image
                 alt={logo.title}
                 src={logo.src}
@@ -148,16 +141,19 @@ function TestimonialSection() {
           rating={5}
           name="Amanda Chen"
           testimony="Incredible app for job interviews! Ghosted AI's feedback was spot on, helping me improve my answers and body language. A must-have for job seekers!"
+          logo="/logos/google.svg"
         />
         <Testimonial
           rating={5}
           name="David Martinez"
           testimony="Ghosted AI surprised me with its precise, helpful AI coaching. Great for interview prep, though it could use more industry-specific tips. Very user-friendly!"
+          logo="/logos/instacart.svg"
         />
         <Testimonial
           rating={5}
           name="Sarah Johnson"
           testimony="Ghosted AI offers good basic interview feedback, but it's a bit generic. Great for beginners, but might not suffice for experienced professionals."
+          logo="/logos/cision.svg"
         />
       </div>
       <div className="pt-14 text-center">
@@ -165,17 +161,17 @@ function TestimonialSection() {
         <ul className='flex flex-wrap gap-3 justify-around py-8'>
           {coachingLogos.map(logo => (
             <li key={logo.title}>
-              <PlaceholderImg width={100} height={30} />
+              <div style={{ position: "relative", width: "100px", height: "30px" }}>
+                <Image
+                    src={logo.src}
+                    alt=""
+                    fill
+                    style={{ objectFit: "contain" }} />
+              </div>
             </li>
           ))}
         </ul>
       </div>
     </section>
-  )
-}
-
-function PlaceholderImg({ width, height, ...rest }: { width: number, height: number, className?: string }) {
-  return (
-    <div style={{ height: `${height}px`, width: `${width}px`, background: '#ddd' }} {...rest}>Logo here</div>
   )
 }
