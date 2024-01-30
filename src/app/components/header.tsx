@@ -28,7 +28,7 @@ export default function Header() {
             </div>
             <div className="hidden lg:flex">
                 {links.map(link => (
-                    <Link href={link.href} className={`block mt-4 lg:inline-block lg:mt-0 ${styles.link}`}>{link.title}</Link>
+                    <Link key={link.href} href={link.href} className={`block mt-4 lg:inline-block lg:mt-0 ${styles.link}`}>{link.title}</Link>
                 ))}
             </div>
             <div>
@@ -61,6 +61,7 @@ export default function Header() {
                 <div className="text-sm flex flex-col gap-6 text-center">
                     {links.map(link => (
                         <Link
+                            key={link.href}
                             href={link.href}
                             className={`block mt-4 lg:inline-block lg:mt-0`}>
                             {link.title}
