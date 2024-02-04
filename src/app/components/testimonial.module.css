@@ -11,6 +11,7 @@
   box-shadow: 0px 1px 3px 0px rgba(45, 47, 48, 0.12);
   backdrop-filter: blur(4px);
 }
+
 .name {
   color: var(--Black, #152931);
   /* font-family: Circular Std; */

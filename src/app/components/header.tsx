@@ -4,6 +4,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import styles from './header.module.css'
 import { useState } from 'react'
+import { usePathname } from 'next/navigation'
 
 const links = [
     { title: 'How it works', href: '/#how-it-works' },
@@ -13,19 +14,14 @@ const links = [
 
 export default function Header() {
     const [isOpen, setIsOpen] = useState(false);
+    const pathname = usePathname();
+    const showLinks = pathname.includes('signup');
 
-    return (
-        <nav className="flex items-center justify-between flex-wrap py-3">
-            <div className="flex items-center flex-shrink-0 text-white">
-                <a href="/">
-                    <Image
-                        src="/logos/ghosted.svg"
-                        alt="Ghosted home"
-                        width={146}
-                        height={28}
-                    />
-                </a>
-            </div>
+    let linkDiv = (
+        <></>
+    )
+    if (!showLinks) {
+        linkDiv = <>
             <div className="hidden lg:flex">
                 {links.map(link => (
                     <Link key={link.href} href={link.href} className={`block mt-4 lg:inline-block lg:mt-0 ${styles.link}`}>{link.title}</Link>
@@ -72,6 +68,22 @@ export default function Header() {
                     </Link>
                 </div>
             </div>
+        </>;
+    }
+
+    return (
+        <nav className="flex items-center justify-between flex-wrap py-3">
+            <div className="flex items-center flex-shrink-0 text-white">
+                <a href="/">
+                    <Image
+                        src="/logos/ghosted.svg"
+                        alt="Ghosted home"
+                        width={146}
+                        height={28}
+                    />
+                </a>
+            </div>
+            {linkDiv}
         </nav >
     )
 }
