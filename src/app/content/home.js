@@ -17,11 +17,11 @@ export const worksWith = [
   { title: "Microsoft Teams", src: msTeams, height: "32px" },
 ];
 export const coachingLogos = [
-  { title: "Google", src: "/logos/google.svg", height: "24px" },
-  { title: "Dropbox", src: "/logos/dropbox.svg", height: "24px" },
-  { title: "Instacart", src: "/logos/instacart.svg", height: "24px" },
-  { title: "Uber", src: "/logos/uber.svg", height: "24px" },
-  { title: "Meta", src: "/logos/meta.svg", height: "24px" },
+  { title: "Google", src: "/logos/google.svg", height: "50px" },
+  { title: "Dropbox", src: "/logos/dropbox.svg", height: "50px" },
+  { title: "Instacart", src: "/logos/instacart.svg", height: "50px" },
+  { title: "Uber", src: "/logos/uber.svg", height: "34px" },
+  { title: "Meta", src: "/logos/meta.svg", height: "40px" },
 ];
 export const how = [
   {

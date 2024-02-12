@@ -12,6 +12,10 @@
   scroll-behavior: smooth;
 }
 
+a {
+  color: var(--brand-purple-darken);
+}
+
 /* @media (prefers-color-scheme: dark) {
   :root {
     --foreground-rgb: 255, 255, 255;
@@ -32,4 +36,9 @@ body {
 }
 .primary-button:hover {
   background: var(--brand-purple-darken);
+}
+
+
+button {
+  background: var(--brand-purple);
 }

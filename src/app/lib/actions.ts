@@ -3,7 +3,7 @@
 import { sql } from "@vercel/postgres";
 import { redirect } from "next/navigation";
 
-export async function createSurveryResponse(
+export async function createSurveyResponse(
   email: string,
   answer1: string | null = "",
   answer2: string | null = "",

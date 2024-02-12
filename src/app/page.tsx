@@ -2,7 +2,7 @@ import styles from './styles.module.css'
 import EmailSignup from './components/email-signup'
 import Testimonial from './components/testimonial'
 // Images
-import { builtBy, worksWith, how, coachingLogos } from './content/home'
+import { worksWith, how, coachingLogos } from './content/home'
 import Image from 'next/image'
 import heroInbox from '/public/illustrations/hero-inbox.svg'
 import recording from '/public/illustrations/recording.svg'
@@ -28,18 +28,18 @@ function HeroSection() {
         </p>
         <EmailSignup />
         <h2 className={`text-md mt-8 mb-6 ${styles.h3}`}>Built by operators from</h2>
-        <div className="h-16 justify-start items-start inline-flex">
-          <div className="w-32 h-6 flex-col justify-center items-start inline-flex">
-            <Image alt="Amazon" src="/logos/amazon.svg" width={68} height={20} sizes="100vw" />
+        <div className="h-16 items-start flex flex-row">
+          <div className="mr-12">
+            <Image alt="Amazon" src="/logos/amazon.svg" width={90} height={25} sizes="100vw" />
           </div>
-          <div className="w-32 h-6 flex-col justify-center items-start inline-flex">
-            <Image alt="Visa" src="/logos/visa.svg" width={51} height={16} sizes="100vw" />
+          <div className="mr-12">
+            <Image alt="Visa" src="/logos/visa.svg" width={75} height={25} sizes="100vw" />
           </div>
-          <div className="w-32 flex-col justify-center items-start inline-flex">
-            <Image alt="Google" src="/logos/google.svg" width={68} height={24} sizes="100vw" />
+          <div className="mr-12">
+            <Image alt="Google" src="/logos/google.svg" width={95} height={25} sizes="100vw" />
           </div>
           <div className="flex-col justify-start items-start gap-1 inline-flex">
-            <Image alt="Sprig" src="/logos/sprig.svg" width={59} height={22} sizes="100vw" />
+            <Image alt="Sprig" src="/logos/sprig.svg" width={80} height={25} sizes="100vw" />
             <div className="text-neutral-500 text-sm font-normal">a16Z & Accel backed</div>
           </div>
         </div>
@@ -104,23 +104,23 @@ function GetAccessSection() {
             }}
           />
         </div>
-        <div className='flex flex-col h-full justify-center mt-8'>
+        <div className='flex flex-col h-full justify-center'>
           <h2 className={`text-lg md:text-2xl mb-8 ${styles.accessTitle}`}>Provide your details for early access to our private beta!</h2>
           <EmailSignup />
         </div>
       </div>
       <div className="pt-14 text-center">
         <h3 className={styles.h3}>Works with popular meeting apps</h3>
-        <ul className='flex flex-wrap gap-3 justify-around max-w-3xl mx-auto py-8'>
+        <ul className='flex flex-wrap max-w-3xl mx-auto py-8 justify-center'>
           {worksWith.map(logo => (
-            <li key={logo.title} style={{ position: 'relative', width: '171px', height: '32px' }}>
+            <li key={logo.title}>
               <Image
                 alt={logo.title}
                 src={logo.src}
-                sizes="180px"
+                className='mx-8'
                 style={{
                   width: 'auto',
-                  height: '32px',
+                  height: '40px',
                 }}
               />
             </li>
@@ -136,32 +136,32 @@ function TestimonialSection() {
   return (
     <section id="testimonials" className='py-7 lg:py-14'>
       <h2 className={`mb-8 text-xl md:text-4xl text-center ${styles.heading}`}>Testimonials</h2>
-      <div className='grid md:grid-cols-3 gap-4'>
+      <div className='grid md:grid-cols-3 gap-2'>
         <Testimonial
           rating={5}
-          name="Amanda Chen"
-          testimony="Incredible app for job interviews! Ghosted AI's feedback was spot on, helping me improve my answers and body language. A must-have for job seekers!"
+          name="Product Manager @ Google"
+          testimony="I support Ghosted because it fills a vital gap in the job market, emphasizing ongoing improvement in interview skills. Acting as a personal interview coach, Ghosted boosts candidates' confidence, refines responses, and helps them stand out in a competitive job market."
           logo="/logos/google.svg"
         />
         <Testimonial
           rating={5}
-          name="David Martinez"
-          testimony="Ghosted AI surprised me with its precise, helpful AI coaching. Great for interview prep, though it could use more industry-specific tips. Very user-friendly!"
-          logo="/logos/instacart.svg"
+          name="Research Manager @ AirBnb"
+          testimony="I endorse Ghosted for bridging a crucial job market gap by enhancing ongoing interview skills. Serving as a personalized coach, Ghosted elevates candidates' confidence, sharpens responses, and distinguishes them in a competitive job market."
+          logo="/logos/airbnb.svg"
         />
         <Testimonial
           rating={5}
-          name="Sarah Johnson"
-          testimony="Ghosted AI offers good basic interview feedback, but it's a bit generic. Great for beginners, but might not suffice for experienced professionals."
+          name="Director Of Product @ Cision"
+          testimony="Ghosted is building a product to solve a pain point that I believe most of us have faced while interviewing."
           logo="/logos/cision.svg"
         />
       </div>
       <div className="pt-14 text-center">
         <h2 className={styles.h3}>Coaching from professionals at</h2>
-        <ul className='flex flex-wrap gap-3 justify-around py-8'>
+        <ul className='flex md:justify-around py-8 md:flex-row flex-col justify-center'>
           {coachingLogos.map(logo => (
-            <li key={logo.title}>
-              <div style={{ position: "relative", width: "100px", height: "30px" }}>
+            <li key={logo.title} className='mx-auto mb-8 md:mb-0 md:mt-0'>
+              <div style={{ position: "relative", width: "100px", height: "40px" }}>
                 <Image
                     src={logo.src}
                     alt=""

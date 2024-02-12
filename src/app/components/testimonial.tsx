@@ -64,7 +64,6 @@ export default function Testimonial({ name, testimony, rating, logo }: { name: s
                         </svg>
                     </div>
                     <div className='flex-grow flex flex-col justify-around'>
-                        <Stars rating={rating} />
                         <p className={styles.name}>
                             {name}
                         </p>

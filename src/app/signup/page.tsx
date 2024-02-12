@@ -4,8 +4,9 @@ import { Button, Checkbox, Progress, Select, Space, Text } from "@mantine/core";
 import { IconArrowRight } from "@tabler/icons-react";
 import { useState } from "react";
 import styles from "./signup.module.css";
-import { createSurveryResponse } from "@/app/lib/actions";
+import { createSurveyResponse } from "@/app/lib/actions";
 import { useRouter, useSearchParams } from "next/navigation";
+import { Suspense } from "react";
 
 interface Question {
   question: string;
@@ -22,7 +23,7 @@ const questionBank: Question[] = [
     marketing_opt_in: false,
   },
   {
-    question: "What best describes your current job search status",
+    question: "What best describes your current job search status?",
     options: [
       "Actively looking",
       "Not actively looking, but open to opportunities",
@@ -33,7 +34,7 @@ const questionBank: Question[] = [
   },
   {
     question:
-      "Which of the following best describes your current employment status",
+      "Which of the following best describes your current employment status?",
     options: ["Self-employed", "Not employed/Laid off", "Employed"],
     selected: null,
     marketing_opt_in: true,
@@ -49,8 +50,12 @@ function QuestionSelector({ question }: QuestionSelectorProps) {
     <Select
       placeholder="Select an option"
       styles={{
-        input: { height: 55, borderRadius: 10 },
-        dropdown: { borderRadius: 10 },
+        input: {
+          height: 55,
+          borderRadius: 10,
+          borderColor: "var(--brand-purple)",
+        },
+        dropdown: { borderRadius: 10, borderColor: "var(--brand-purple)" },
         option: { height: 55 },
       }}
       value={selected}
@@ -72,7 +77,11 @@ function ProgressBar({ currentStep = 1, totalSteps = 4 }: ProgressBarProps) {
   return (
     <div className="flex flex-row items-center">
       <div className="w-full bg-gray-200 rounded-full h-2 dark:bg-gray-700">
-        <Progress value={progress} transitionDuration={200} />
+        <Progress
+          styles={{ section: { background: "var(--brand-purple)" } }}
+          value={progress}
+          transitionDuration={200}
+        />
       </div>
       <Space w="xs" />
       <Text>
@@ -115,6 +124,9 @@ function QuestionCard({
         w={buttonWidth}
         h={buttonHeight}
         size="sm"
+        style={{
+          color: "var(--brand-purple)",
+        }}
         classNames={{ root: "mb-8 mr-4" }}
         onClick={onBackClicked}
       >
@@ -131,6 +143,9 @@ function QuestionCard({
         w={buttonWidth}
         h={buttonHeight}
         size="sm"
+        style={{
+          background: "var(--brand-purple)",
+        }}
         classNames={{ root: "mb-8 " }}
         onClick={onNextClicked}
         rightSection={<IconArrowRight size={14}></IconArrowRight>}
@@ -147,6 +162,9 @@ function QuestionCard({
         radius="md"
         w={buttonWidth}
         h={buttonHeight}
+        style={{
+          background: "var(--brand-purple)",
+        }}
         size="sm"
         classNames={{ root: "mb-8 " }}
         onClick={onSubmitClicked}
@@ -157,6 +175,12 @@ function QuestionCard({
     emailCheckbox = (
       <Checkbox
         checked={checked}
+        styles={{
+          input: {
+            border: "var(--brand-purple)",
+            background: "var(--brand-purple)",
+          },
+        }}
         onChange={(event) => {
           question.marketing_opt_in = event.currentTarget.checked;
           setChecked(event.currentTarget.checked);
@@ -183,11 +207,13 @@ function QuestionCard({
   );
 }
 
-export default function Page() {
+function Signup() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const email = searchParams.get("email") || "";
   const [questionIndex, setQuestionIndex] = useState(0);
+
+  createSurveyResponse(email);
 
   return (
     <div className="flex flex-col justify-center items-center py-4">
@@ -213,7 +239,7 @@ export default function Page() {
                       setQuestionIndex(questionIndex - 1);
                     }}
                     onSubmitClicked={async () => {
-                      await createSurveryResponse(
+                      await createSurveyResponse(
                         email,
                         questionBank[0].selected,
                         questionBank[1].selected,
@@ -233,5 +259,13 @@ export default function Page() {
         </div>
       </div>
     </div>
+  );
+}
+
+export default function Page() {
+  return (
+    <Suspense>
+      <Signup />
+    </Suspense>
   );
 }
