@@ -6,6 +6,7 @@ import Footer from "@/app/components/footer";
 import "@mantine/core/styles.css";
 import localFont from "next/font/local";
 import { Analytics } from "@vercel/analytics/react";
+import { GoogleTagManager } from '@next/third-parties/google'
 
 import { ColorSchemeScript, MantineProvider, createTheme } from "@mantine/core";
 
@@ -55,6 +56,7 @@ export default function RootLayout({
           <Footer />
         </MantineProvider>
       </body>
+      <GoogleTagManager gtmId="GTM-W7Z47KDG" />
     </html>
   );
 }

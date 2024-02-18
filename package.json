@@ -12,10 +12,11 @@
     "@headlessui/react": "^1.7.18",
     "@mantine/core": "^7.5.3",
     "@mantine/hooks": "^7.5.3",
+    "@next/third-parties": "^14.1.0",
     "@tabler/icons-react": "^2.47.0",
     "@vercel/analytics": "^1.2.0",
     "@vercel/postgres": "^0.7.2",
-    "next": "14.1",
+    "next": "^14.1.0",
     "react": "^18",
     "react-dom": "^18"
   },
