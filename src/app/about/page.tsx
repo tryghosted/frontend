@@ -97,7 +97,9 @@ export default function About() {
 
         <Text size="lg">
           <Text size="lg">Average Number of Job Applicants: 250</Text>
-          <Text size="lg">Average Number of Applicants Selected for Screening: 6-10</Text>
+          <Text size="lg">
+            Average Number of Applicants Selected for Screening: 6-10
+          </Text>
         </Text>
 
         <Space h="sm" />
@@ -128,8 +130,7 @@ export default function About() {
         <Text size="xl">
           This is why we built Ghosted AI, we’re a team of individuals with
           experiences ranging from FAANG to leading startups funded by the likes
-          of Az16, Accel, and Lightspeed. We know the feeling because we’ve been
-          there.
+          of a16z and Accel. We know the feeling because we’ve been there.
         </Text>
 
         <Space h="xl" />
