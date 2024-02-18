@@ -95,11 +95,9 @@ export default function About() {
 
         <Space h="sm" />
 
+        <Text size="lg">Average Number of Job Applicants: 250</Text>
         <Text size="lg">
-          <Text size="lg">Average Number of Job Applicants: 250</Text>
-          <Text size="lg">
-            Average Number of Applicants Selected for Screening: 6-10
-          </Text>
+          Average Number of Applicants Selected for Screening: 6-10
         </Text>
 
         <Space h="sm" />
