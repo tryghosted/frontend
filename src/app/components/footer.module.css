@@ -17,6 +17,7 @@
   font-style: normal;
   font-weight: 500;
   line-height: 120%; /* 19.2px */
+  cursor: pointer;
 }
 .link:hover {
   text-decoration: underline;

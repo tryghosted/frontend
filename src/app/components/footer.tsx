@@ -37,17 +37,12 @@ export default function Footer() {
           </ul>
           <ul className="flex flex-col md:flex-row md:justify-end gap-2">
             <li>
-              <a className={styles.link} href="#">
-                Terms and Conditions
-              </a>
-            </li>
-            <li>
-              <a className={styles.link} href="#">
+              <a className={styles.link} href="/privacy-policy">
                 Privacy Policy
               </a>
             </li>
             <li>
-              <a className={styles.link} href="#">
+              <a className={styles.link} href="mailto:tryghosted@gmail.com">
                 Contact Us
               </a>
             </li>

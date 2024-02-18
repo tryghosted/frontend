@@ -1,4 +1,4 @@
-import { Title, Text, Space } from "@mantine/core";
+import { Title, Text, Space, List } from "@mantine/core";
 
 export default function About() {
   return (
@@ -96,10 +96,8 @@ export default function About() {
         <Space h="sm" />
 
         <Text size="lg">
-          <ul>
-            <li>Average Number of Job Applicants: 250</li>
-            <li>Average Number of Applicants Selected for Screening: 6-10</li>
-          </ul>
+          <Text size="lg">Average Number of Job Applicants: 250</Text>
+          <Text size="lg">Average Number of Applicants Selected for Screening: 6-10</Text>
         </Text>
 
         <Space h="sm" />
