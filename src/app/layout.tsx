@@ -5,6 +5,7 @@ import Header from "@/app/components/header";
 import Footer from "@/app/components/footer";
 import "@mantine/core/styles.css";
 import localFont from "next/font/local";
+import { Analytics } from "@vercel/analytics/react";
 
 import { ColorSchemeScript, MantineProvider, createTheme } from "@mantine/core";
 
@@ -46,6 +47,7 @@ export default function RootLayout({
       </head>
       <body className={robertFont.className}>
         <MantineProvider theme={{ fontFamily: robertFont.style.fontFamily }}>
+          <Analytics />
           <div className="max-w-6xl mx-auto px-6">
             <Header />
             {children}
