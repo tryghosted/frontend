@@ -23,6 +23,14 @@ const robertFont = localFont({
 export const metadata: Metadata = {
   title: "Ghosted AI",
   description: "Completing the interview feedback loop",
+  keywords: [
+    "AI interview assistant",
+    "interview assistant",
+    "interview feedback loop",
+    "career development tools",
+    "job interview preparation",
+    "AI for career growth",
+  ],
 };
 
 export default function RootLayout({
