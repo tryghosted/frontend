@@ -19,7 +19,11 @@ export default function Footer() {
         <div className="md:text-right">
           <ul className="flex md:justify-end justify-center gap-4 mb-4 mt-2 md:mt-0">
             <li>
-              <a href="#" aria-label="LinkedIn">
+              <a
+                href="https://www.linkedin.com/company/ghosted-ai/"
+                aria-label="LinkedIn"
+                target="_blank"
+              >
                 <Image
                   style={{
                     position: "relative",

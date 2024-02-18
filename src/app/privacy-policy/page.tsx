@@ -16,7 +16,7 @@ export default function About() {
           Ghosted.ai is an AI-powered interview assistant designed to help job
           candidates by transcribing call audio during their remote company
           interviews, thereby closing the feedback loop. We are committed to
-          protecting the privacy and security of our users' personal
+          protecting the privacy and security of our users&apos; personal
           information.
         </Text>
 
@@ -90,7 +90,7 @@ export default function About() {
           <a href="mailto:tryghosted@gmail.com" target="_blank">
             tryghosted@gmail.com
           </a>{" "}
-          with the subject line "Requesting data deletion." We will process your
+          with the subject line &quot;Requesting data deletion.&quot; We will process your
           request in a timely manner.
         </Text>
 
