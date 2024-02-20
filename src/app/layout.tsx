@@ -54,7 +54,7 @@ export default function RootLayout({
       <body className={robertFont.className}>
         <MantineProvider theme={{ fontFamily: robertFont.style.fontFamily }}>
           <Analytics />
-          <div className={`p-6 ${styles.banner}`}>
+          <div className={styles.banner}>
             <div className="max-w-6xl mx-auto px-6">
               🚀 Ghosted will be available publicly in Spring 2024.{" "}
               <a href="#join-waitlist">Join our waitlist to keep up to date</a>{" "}
