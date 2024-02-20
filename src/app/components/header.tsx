@@ -28,8 +28,8 @@ export default function Header() {
                 ))}
             </div>
             <div>
-                <Link href="#get-access" className={`${styles.accessLink} hidden lg:block`}>
-                    Get Early Access
+                <Link href="#join-waitlist" className={`${styles.accessLink} hidden lg:block`}>
+                    Join Waitlist!
                 </Link>
                 <button
                     onClick={() => setIsOpen(!isOpen)}
@@ -63,8 +63,8 @@ export default function Header() {
                             {link.title}
                         </Link>
                     ))}
-                    <Link className={`${styles.accessLink} inline`} href="#get-access">
-                        Get Early Access
+                    <Link className={`${styles.accessLink} inline`} href="#join-waitlist">
+                        Join Waitlist!
                     </Link>
                 </div>
             </div>

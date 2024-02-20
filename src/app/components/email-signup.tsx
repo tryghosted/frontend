@@ -16,7 +16,7 @@ export default function EmailSignup() {
             <form action={handleForm} className={styles.form}>
                 <label htmlFor="signup-email" className='sr-only'>Email</label>
                 <input id="signup-email" name="email" type="email" required placeholder='your@email.com' className={styles.input} />
-                <button type="submit" value="Get Access!" className={styles.button}>Get Access!</button>
+                <button type="submit" value="Join Waitlist!" className={styles.button}>Join Waitlist!</button>
             </form>
         </div>
     );

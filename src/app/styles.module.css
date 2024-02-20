@@ -6,11 +6,29 @@
   line-height: normal;
 }
 
+.banner {
+  background-color: var(--brand-purple);
+  /* font-family: Roobert; */
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  color: white;
+  font-size: 18px;
+  text-align: center;
+}
+
+.banner a {
+  color: white;
+
+  &:hover {
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+}
+
 .h2 {
   color: var(--brand-purple-darkest);
   text-align: center;
-  /* font-family: Roobert; */
-  /* font-size: 40px; */
   font-style: normal;
   font-weight: 700;
   line-height: normal;
@@ -18,7 +36,6 @@
 
 .h3 {
   color: #787878;
-  /* font-family: Roobert-Regular; */
   font-size: 16px;
   font-style: normal;
   font-weight: 400;

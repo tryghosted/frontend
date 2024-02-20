@@ -34,11 +34,8 @@ body {
   background: var(--brand-purple);
   color: white;
 }
+
 .primary-button:hover {
   background: var(--brand-purple-darken);
 }
 
-
-button {
-  background: var(--brand-purple);
-}

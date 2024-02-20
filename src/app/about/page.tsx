@@ -1,4 +1,5 @@
 import { Title, Text, Space, List } from "@mantine/core";
+import EmailSignup from '../components/email-signup';
 
 export default function About() {
   return (
@@ -160,6 +161,9 @@ export default function About() {
         <Text size="xl">
           Try us for free at <a href="https://tryghosted.ai">tryghosted.ai</a>.
         </Text>
+      </section>
+      <section id="join-waitlist" className="flex justify-center mb-6">
+        <EmailSignup />
       </section>
     </main>
   );

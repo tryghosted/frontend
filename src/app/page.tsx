@@ -82,7 +82,7 @@ function HowItWorksSection() {
         ))}
       </div>
       <div className='text-center py-12'>
-        <a href="#get-access" className="primary-button">Get Access!</a>
+        <a href="#join-waitlist" className="primary-button">Join Waitlist!</a>
       </div>
     </section>
   )
@@ -90,7 +90,7 @@ function HowItWorksSection() {
 
 function GetAccessSection() {
   return (
-    <section id="get-access" className='py-7 lg:py-14'>
+    <section id="join-waitlist" className='py-7 lg:py-14'>
       <div className='grid md:grid-cols-2'>
         <div style={{ position: 'relative', width: '400px', margin: '0 auto' }}>
           <Image

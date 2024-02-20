@@ -220,7 +220,7 @@ function Signup() {
       <div className={`${styles.card}`}>
         <div className="flex flex-col justify-center items-center">
           <h2 className="text-2xl font-bold">
-            Get Early Access to Ghosted.AI Beta
+            Join The Waitlist For Ghosted.AI Beta
           </h2>
           <div className="pt-8"></div>
           <div className="px-16 py-8 border rounded-2xl">
